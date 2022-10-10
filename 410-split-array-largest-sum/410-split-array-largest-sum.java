@@ -6,10 +6,9 @@ class Solution {
         int min=Arrays.stream(nums)
                         .max()
                         .getAsInt();
-        int mid=0;
-        while(min<=max)
+        while(min<max)
         {
-            mid=min+(max-min)/2;
+            int mid=min+(max-min)/2;
             
             int m=1;
             int sum=0;
@@ -28,13 +27,13 @@ class Solution {
                     
                 }
             }
-            if(m<=k)
+            if(m>k)
             {
-                max=mid-1;
+                min=mid+1;
             }
             else
             {
-                min=mid+1;
+                max=mid;
             }
         }
         return min;
